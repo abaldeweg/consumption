@@ -1,0 +1,13 @@
+{
+  "username": "Username",
+  "password": "Password",
+  "changePassword": "Change Password",
+  "login": "Login",
+  "language": "Language",
+  "save": "Save",
+  "lists": "Lists",
+  "create_new_list": "Create New List",
+  "edit": "Edit",
+  "remove": "Remove",
+  "edit_list": "Edit List"
+}

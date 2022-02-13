@@ -1,0 +1,32 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.0
+  cypress: cypress-io/cypress@1.29.0
+jobs:
+  unit:
+    parameters:
+      version:
+        type: string
+        default: lts
+    executor:
+      name: node/default
+      tag: <<parameters.version>>
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn components:generate
+workflows:
+  test:
+    jobs:
+      - cypress/run:
+          matrix:
+            parameters:
+              executor:
+                - cypress/base-14
+                - cypress/base-12
+          yarn: true
+          post-install:
+            - run: yarn components:generate
+          command: yarn test:e2e --headless
