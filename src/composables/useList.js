@@ -10,7 +10,7 @@ export default function useList() {
   }
 
   const create = () => {
-    consumptions.value.lists.push({
+    consumptions.value.lists.unshift({
       date: Math.round(Date.now() / 1000),
       resources: [],
     })
