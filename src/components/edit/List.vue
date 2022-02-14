@@ -12,7 +12,8 @@
       </template>
 
       <template #meta>
-        {{ getItem(id, item).counter }} X {{ $t('on_list') }}
+        {{ getItem(id, item) ? getItem(id, item).counter : '0' }} X
+        {{ $t('on_list') }}
       </template>
     </b-list>
   </section>
