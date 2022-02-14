@@ -1,9 +1,21 @@
 <template>
-  <ul>
-    <li @click="add(id, item)" v-for="(item, index) in inventory" :key="index">
-      {{ item }}
-    </li>
-  </ul>
+  <section>
+    <b-list divider v-for="(item, index) in inventory" :key="index">
+      <template #title
+        ><span @click="addItem(id, item)">{{ item }}</span></template
+      >
+
+      <template #options>
+        <span @click="addItem(id, item)"
+          ><b-icon type="plus" :size="35"
+        /></span>
+      </template>
+
+      <template #meta>
+        {{ getItem(id, item).counter }} X {{ $t('on_list') }}
+      </template>
+    </b-list>
+  </section>
 </template>
 
 <script>
@@ -17,9 +29,9 @@ export default {
   setup() {
     const inventory = process.env.VUE_APP_INVENTORY.split(',')
 
-    const { add } = useList()
+    const { addItem, getItem } = useList()
 
-    return { inventory, add }
+    return { inventory, addItem, getItem }
   },
 }
 </script>

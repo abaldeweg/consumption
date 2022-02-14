@@ -22,10 +22,28 @@ export default function useList() {
     save()
   }
 
-  const add = (id, item) => {
-    consumptions.value.lists[id].resources.push(item)
+  const addItem = (id, item) => {
+    let index = getIndex(id, item)
+    if (index === -1) {
+      consumptions.value.lists[id].resources.push({ name: item, counter: 1 })
+    }
+    if (index >= 0) {
+      consumptions.value.lists[id].resources[index].counter++
+    }
     save()
   }
 
-  return { consumptions, create, remove, add }
+  const getItem = (id, item) => {
+    let index = getIndex(id, item)
+
+    return consumptions.value.lists[id].resources[index]
+  }
+
+  const getIndex = (id, item) => {
+    return consumptions.value.lists[id].resources.findIndex(
+      (el) => el.name === item
+    )
+  }
+
+  return { consumptions, create, remove, addItem, getItem }
 }
