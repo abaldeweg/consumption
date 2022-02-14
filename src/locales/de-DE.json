@@ -13,5 +13,7 @@
   "on_list": "auf der Liste",
   "list": "Liste",
   "date": "Datum",
-  "share_by_mail": "Teilen per Mail"
+  "share_by_mail": "Teilen per Mail",
+  "clear": "Aufräumen",
+  "clear_all_lists": "Lösche alle Listen"
 }

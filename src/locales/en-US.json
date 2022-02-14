@@ -13,5 +13,7 @@
   "on_list": "on list",
   "list": "List",
   "date": "Date",
-  "share_by_mail": "Share by Mail"
+  "share_by_mail": "Share by Mail",
+  "clear": "Clear",
+  "clear_all_lists": "Clear all lists"
 }

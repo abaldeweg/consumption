@@ -22,6 +22,10 @@ export default function useList() {
     save()
   }
 
+  const clear = () => {
+    localStorage.removeItem('consumption')
+  }
+
   const addItem = (id, item) => {
     let index = getIndex(id, item)
     if (index === -1) {
@@ -45,5 +49,5 @@ export default function useList() {
     )
   }
 
-  return { consumptions, create, remove, addItem, getItem }
+  return { consumptions, create, remove, clear, addItem, getItem }
 }
