@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { computed } from '@vue/composition-api'
+import { computed, toRefs } from '@vue/composition-api'
 import useList from '@/composables/useList'
 import EditList from '@/components/edit/List'
 import i18n from '~b/i18n'
@@ -34,10 +34,11 @@ export default {
     title: 'Edit List',
   },
   setup(props) {
+    const { id } = toRefs(props)
     const { consumptions } = useList()
 
     const title = computed(() => {
-      let date = new Date(consumptions.value.lists[props.id].date * 1000)
+      let date = new Date(consumptions.value.lists[id.value].date * 1000)
 
       return date.toLocaleString()
     })
@@ -56,7 +57,7 @@ export default {
         title.value +
         '%0d%0a'
 
-      consumptions.value.lists[props.id].resources.forEach((element) => {
+      consumptions.value.lists[id.value].resources.forEach((element) => {
         content += element.counter + ' x ' + element.name + '%0d%0a'
       })
 
