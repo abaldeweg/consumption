@@ -5,10 +5,10 @@
   "login": "Login",
   "language": "Sprache",
   "save": "Speichern",
-  "lists": "Lists",
-  "create_new_list": "Create New List",
-  "edit": "Edit",
-  "remove": "Remove",
-  "edit_list": "Edit List",
+  "lists": "Listen",
+  "create_new_list": "Neue Liste",
+  "edit": "Bearbeiten",
+  "remove": "Löschen",
+  "edit_list": "Bearbeite Liste",
   "on_list": "auf der Liste"
 }
