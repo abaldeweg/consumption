@@ -23,6 +23,7 @@ export default function useList() {
   }
 
   const clear = () => {
+    consumptions.value.lists = []
     localStorage.removeItem('consumption')
   }
 
