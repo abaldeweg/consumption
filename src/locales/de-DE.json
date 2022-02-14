@@ -10,5 +10,8 @@
   "edit": "Bearbeiten",
   "remove": "Löschen",
   "edit_list": "Bearbeite Liste",
-  "on_list": "auf der Liste"
+  "on_list": "auf der Liste",
+  "list": "Liste",
+  "date": "Datum",
+  "share_by_mail": "Teilen per Mail"
 }

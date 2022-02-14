@@ -7,6 +7,12 @@
     <b-container size="m">
       <edit-list :id="id" />
     </b-container>
+
+    <b-container size="m">
+      <b-button design="primary_wide" @click="shareByMail">{{
+        $t('share_by_mail')
+      }}</b-button>
+    </b-container>
   </section>
 </template>
 
@@ -14,6 +20,7 @@
 import { computed } from '@vue/composition-api'
 import useList from '@/composables/useList'
 import EditList from '@/components/edit/List'
+import i18n from '~b/i18n'
 
 export default {
   name: 'edit-view',
@@ -35,7 +42,28 @@ export default {
       return date.toLocaleString()
     })
 
-    return { title }
+    const shareByMail = () => {
+      let content =
+        'mailto:' +
+        process.env.VUE_APP_SHARE_MAIL +
+        '?subject=' +
+        i18n.t('list') +
+        ': ' +
+        title.value +
+        '&body=' +
+        i18n.t('date') +
+        ': ' +
+        title.value +
+        '%0d%0a'
+
+      consumptions.value.lists[props.id].resources.forEach((element) => {
+        content += element.counter + ' x ' + element.name + '%0d%0a'
+      })
+
+      window.open(content)
+    }
+
+    return { consumptions, title, shareByMail }
   },
 }
 </script>
