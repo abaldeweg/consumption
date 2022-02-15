@@ -24,6 +24,7 @@ services:
         - VUE_APP_BASE_URL=${VUE_APP_BASE_URL}
         - VUE_APP_INVENTORY=${VUE_APP_INVENTORY}
         - VUE_APP_SHARE_MAIL=${VUE_APP_SHARE_MAIL}
+        - AUTH=${AUTH}
     restart: unless-stopped
     ports:
       - ${CONTAINER_PORT:-9000}:80
@@ -49,6 +50,7 @@ VUE_APP_SHARE_MAIL=
 - VUE_APP_BASE_URL - The Base URL, in case the app is installed in a subdirectory.
 - VUE_APP_INVENTORY - Your inventory as comma separated values e.g. `milk (package),coffee,cola`
 - VUE_APP_SHARE_MAIL - Default address for share by mail
+- AUTH - The value will be written to `/usr/local/apache2/.htpasswd`
 
 ## Architecture
 
