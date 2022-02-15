@@ -25,6 +25,8 @@ FROM httpd:2.4 as production-stage
 
 COPY ./docker/httpd.conf /usr/local/apache2/conf/httpd.conf
 
+RUN echo "$AUTH" > /usr/local/apache2/.htpasswd
+
 COPY --from=build-stage /usr/app/dist /usr/local/apache2/htdocs
 
 EXPOSE 80
