@@ -13,6 +13,7 @@ export default function useList() {
     lists.value.unshift({
       date: Math.round(Date.now() / 1000),
       resources: [],
+      notes: null,
     })
     save()
   }
@@ -48,5 +49,10 @@ export default function useList() {
     return lists.value[id].resources.findIndex((el) => el.name === item)
   }
 
-  return { lists, create, remove, clear, addItem, getItem }
+  const setNotes = (id, notes) => {
+    lists.value[id].notes = notes
+    save()
+  }
+
+  return { lists, create, remove, clear, addItem, getItem, setNotes }
 }
