@@ -1,16 +1,16 @@
 import { ref } from '@vue/composition-api'
 
-export const consumptions = ref(
-  JSON.parse(localStorage.getItem('consumption')) || { lists: [] }
+export const lists = ref(
+  JSON.parse(localStorage.getItem('consumption_list')) || []
 )
 
 export default function useList() {
   const save = () => {
-    localStorage.setItem('consumption', JSON.stringify(consumptions.value))
+    localStorage.setItem('consumption_list', JSON.stringify(lists.value))
   }
 
   const create = () => {
-    consumptions.value.lists.unshift({
+    lists.value.unshift({
       date: Math.round(Date.now() / 1000),
       resources: [],
     })
@@ -18,22 +18,22 @@ export default function useList() {
   }
 
   const remove = (id) => {
-    consumptions.value.lists.splice(id, 1)
+    lists.value.splice(id, 1)
     save()
   }
 
   const clear = () => {
-    consumptions.value.lists = []
-    localStorage.removeItem('consumption')
+    lists.value = []
+    localStorage.removeItem('consumption_list')
   }
 
   const addItem = (id, item) => {
     let index = getIndex(id, item)
     if (index === -1) {
-      consumptions.value.lists[id].resources.push({ name: item, counter: 1 })
+      lists.value[id].resources.push({ name: item, counter: 1 })
     }
     if (index >= 0) {
-      consumptions.value.lists[id].resources[index].counter++
+      lists.value[id].resources[index].counter++
     }
     save()
   }
@@ -41,14 +41,12 @@ export default function useList() {
   const getItem = (id, item) => {
     let index = getIndex(id, item)
 
-    return consumptions.value.lists[id].resources[index]
+    return lists.value[id].resources[index]
   }
 
   const getIndex = (id, item) => {
-    return consumptions.value.lists[id].resources.findIndex(
-      (el) => el.name === item
-    )
+    return lists.value[id].resources.findIndex((el) => el.name === item)
   }
 
-  return { consumptions, create, remove, clear, addItem, getItem }
+  return { lists, create, remove, clear, addItem, getItem }
 }

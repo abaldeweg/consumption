@@ -35,10 +35,10 @@ export default {
   },
   setup(props) {
     const { id } = toRefs(props)
-    const { consumptions } = useList()
+    const { lists } = useList()
 
     const title = computed(() => {
-      let date = new Date(consumptions.value.lists[id.value].date * 1000)
+      let date = new Date(lists.value[id.value].date * 1000)
 
       return date.toLocaleString()
     })
@@ -57,14 +57,14 @@ export default {
         title.value +
         '%0d%0a'
 
-      consumptions.value.lists[id.value].resources.forEach((element) => {
+      lists.value[id.value].resources.forEach((element) => {
         content += element.counter + ' x ' + element.name + '%0d%0a'
       })
 
       window.open(content)
     }
 
-    return { consumptions, title, shareByMail }
+    return { lists, title, shareByMail }
   },
 }
 </script>

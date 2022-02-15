@@ -3,7 +3,7 @@
     <b-list
       :route="{ name: 'edit', params: { id: index } }"
       divider
-      v-for="(item, index) in consumptions.lists"
+      v-for="(item, index) in lists"
       :key="index"
     >
       <template #title>{{ formatTitle(item.date) }}</template>
@@ -32,7 +32,7 @@ import useList from '@/composables/useList'
 export default {
   name: 'list-list',
   setup() {
-    const { consumptions, remove } = useList()
+    const { lists, remove } = useList()
 
     const formatTitle = (title) => {
       let date = new Date(title * 1000)
@@ -40,7 +40,7 @@ export default {
       return date.toLocaleString()
     }
 
-    return { consumptions, remove, formatTitle }
+    return { lists, remove, formatTitle }
   },
 }
 </script>
