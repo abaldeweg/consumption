@@ -1772,6 +1772,11 @@
   resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.4.9.tgz#6fa65284f545887b52d421f23b4fa1c41bc0ad4b"
   integrity sha512-l6YOeg5LEXmfPqyxAnBaCv1FMRw0OGKJ4m6nOWRm6ngt5TuHcj5ZoBRN+LXh3J0u6Ur3C4VA+RiKT+M0eItr/g==
 
+"@vue/devtools-api@^6.0.0":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.13.tgz#33f8debe2d0239903b6fc8af10ace45ed3a4fab1"
+  integrity sha512-T34EjcArVqzANedEZe2kXQ+AZsld2z1ptJlkOGm87+blk+s6udnP4ze/NYqV8lz1o9AIivimN0xxteLlWiWQdg==
+
 "@vue/eslint-config-prettier@7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@vue/eslint-config-prettier/-/eslint-config-prettier-7.0.0.tgz#44ab55ca22401102b57795c59428e9dade72be34"
@@ -10748,6 +10753,13 @@ vue-router@3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.3.tgz#041048053e336829d05dafacf6a8fb669a2e7999"
   integrity sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==
+
+vue-router@4.0.14:
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.14.tgz#ce2028c1c5c33e30c7287950c973f397fce1bd65"
+  integrity sha512-wAO6zF9zxA3u+7AkMPqw9LjoUCjSxfFvINQj3E/DceTt6uEz1XZLraDhdg2EYmvVwTBSGlLYsUw8bDmx0754Mw==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0"
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"
