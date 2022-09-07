@@ -2,11 +2,11 @@
 import { useTitle } from '@baldeweg/ui'
 import ListList from '@/components/list/ListList.vue'
 import ListCreate from '@/components/list/ListCreate.vue'
-import { useList } from '@/composables/useList.js'
+import { useLists } from '@/composables/useLists.js'
 
 useTitle({ title: 'Lists' })
 
-const { clear } = useList()
+const { clear } = useLists()
 </script>
 
 <template>
