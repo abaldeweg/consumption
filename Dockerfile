@@ -1,3 +1,5 @@
+ARG VUE_APP_BASE_URL
+
 # build stage
 FROM node:lts-alpine as build-stage
 
@@ -7,13 +9,6 @@ COPY ./package.json ./
 COPY ./yarn.lock ./
 RUN yarn install
 COPY . .
-RUN yarn components:generate
-
-ARG VUE_APP_I18N_LOCALE
-ENV VUE_APP_I18N_LOCALE=$VUE_APP_I18N_LOCALE
-
-ARG VUE_APP_I18N_FALLBACK_LOCALE
-ENV VUE_APP_I18N_FALLBACK_LOCALE=$VUE_APP_I18N_FALLBACK_LOCALE
 
 ARG VUE_APP_BASE_URL
 ENV VUE_APP_BASE_URL=$VUE_APP_BASE_URL
@@ -29,6 +24,9 @@ RUN yarn build
 # production stage
 FROM httpd:2.4 as production-stage
 
+ARG VUE_APP_BASE_URL
+ENV VUE_APP_BASE_URL=$VUE_APP_BASE_URL
+
 COPY ./docker/httpd.conf /usr/local/apache2/conf/httpd.conf
 
 ARG AUTH
@@ -36,6 +34,6 @@ ENV AUTH=$AUTH
 
 RUN echo $AUTH > /usr/local/apache2/.htpasswd
 
-COPY --from=build-stage /usr/app/dist /usr/local/apache2/htdocs
+COPY --from=build-stage /usr/app/dist /usr/local/apache2/htdocs${VUE_APP_BASE_URL}
 
 EXPOSE 80

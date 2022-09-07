@@ -1,3 +1,14 @@
+<script setup>
+import { useTitle } from '@baldeweg/ui'
+import ListList from '@/components/list/ListList.vue'
+import ListCreate from '@/components/list/ListCreate.vue'
+import { useList } from '@/composables/useList.js'
+
+useTitle({ title: 'Lists' })
+
+const { clear } = useList()
+</script>
+
 <template>
   <section>
     <b-container size="m">
@@ -22,25 +33,3 @@
     </b-container>
   </section>
 </template>
-
-<script>
-import ListList from '@/components/list/List'
-import ListCreate from '@/components/list/Create'
-import useList from '@/composables/useList'
-
-export default {
-  name: 'list-view',
-  components: {
-    ListList,
-    ListCreate,
-  },
-  head: {
-    title: 'Lists',
-  },
-  setup() {
-    const { clear } = useList()
-
-    return { clear }
-  },
-}
-</script>

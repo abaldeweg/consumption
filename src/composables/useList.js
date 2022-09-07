@@ -1,10 +1,10 @@
-import { ref } from '@vue/composition-api'
+import { ref } from 'vue'
 
 export const lists = ref(
   JSON.parse(localStorage.getItem('consumption_list')) || []
 )
 
-export default function useList() {
+export function useList() {
   const save = () => {
     localStorage.setItem('consumption_list', JSON.stringify(lists.value))
   }

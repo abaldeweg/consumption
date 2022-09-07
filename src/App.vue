@@ -1,8 +1,15 @@
+<script setup>
+import { useLocale, useColorScheme } from '@baldeweg/ui'
+
+useLocale()
+useColorScheme()
+</script>
+
 <template>
-  <b-app>
+  <BApp>
     <b-masthead>
       <b-masthead-item type="center">
-        <router-link :to="{ name: 'index' }">
+        <router-link :to="{ name: 'list' }">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="50"
@@ -18,15 +25,9 @@
       </b-masthead-item>
     </b-masthead>
 
-    <slot />
-  </b-app>
+    <RouterView />
+  </BApp>
 </template>
-
-<script>
-export default {
-  name: 'layout',
-}
-</script>
 
 <style scoped>
 .logo {
