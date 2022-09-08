@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, toRefs, watch } from 'vue'
+import { computed, toRefs, watch } from 'vue'
 import { useTitle } from '@baldeweg/ui'
 import { useI18n } from 'vue-i18n'
 import { useList } from '@/composables/useList.js'
@@ -14,17 +14,16 @@ const { t } = useI18n()
 
 useTitle({ title: t('update_list') })
 
-const { id } = toRefs(props)
 const { lists, setNotes } = useList()
-const notes = ref(lists.value[id.value].notes)
+const { notes } = toRefs(lists.value[props.id])
 
 watch(
   () => notes.value,
-  () => setNotes(id.value, notes.value)
+  () => setNotes(props.id, notes.value)
 )
 
 const title = computed(() => {
-  let date = new Date(lists.value[id.value].date * 1000)
+  let date = new Date(lists.value[props.id].date * 1000)
 
   return date.toLocaleString()
 })
@@ -43,7 +42,7 @@ const shareByMail = () => {
     title.value +
     '%0d%0a'
 
-  lists.value[id.value].resources.forEach((element) => {
+  lists.value[props.id].resources.forEach((element) => {
     content += element.counter + ' x ' + element.name + '%0d%0a'
   })
 
@@ -59,7 +58,7 @@ const shareByMail = () => {
   </b-container>
 
   <b-container size="m">
-    <h2>{{ $t('add') }}</h2>
+    <h2>{{ $t('add_product') }}</h2>
     <AddItem :id="id" />
   </b-container>
 
