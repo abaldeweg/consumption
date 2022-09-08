@@ -17,5 +17,6 @@
   "my_lists": "Meine Listen",
   "update_list": "Liste aktualisieren",
   "add_product": "Produkt hinzufügen",
-  "product_added": "Produkt hinzugefügt"
+  "product_added": "Produkt hinzugefügt",
+  "item_removed": "Eintrag entfernt, da auf Null gesetzt."
 }

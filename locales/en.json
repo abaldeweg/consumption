@@ -17,5 +17,6 @@
   "my_lists": "My Lists",
   "update_list": "Update List",
   "add_product": "Add Product",
-  "product_added": "Product added"
+  "product_added": "Product added",
+  "item_removed": "Item removed, because set to zero."
 }

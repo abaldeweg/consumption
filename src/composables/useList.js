@@ -1,9 +1,15 @@
 import { ref } from 'vue'
+import { useToast } from '@baldeweg/ui'
+import { useI18n } from 'vue-i18n'
 
 const KEY_NAME = 'consumption_lists'
 const lists = ref(JSON.parse(localStorage.getItem(KEY_NAME)) || {})
 
 export function useList() {
+  const { t } = useI18n()
+
+  const { add } = useToast()
+
   // Lists
   const save = () => {
     localStorage.setItem(KEY_NAME, JSON.stringify(lists.value))
@@ -36,6 +42,10 @@ export function useList() {
 
   const removeItem = (list, item) => {
     lists.value[list].resources.splice(item, 1)
+    add({
+      type: 'success',
+      body: t('item_removed'),
+    })
     save()
   }
 
