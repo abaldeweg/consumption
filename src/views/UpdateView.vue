@@ -2,8 +2,8 @@
 import { computed, ref, toRefs, watch } from 'vue'
 import { useTitle } from '@baldeweg/ui'
 import { useList } from '@/composables/useList.js'
-import EditList from '@/components/edit/EditList.vue'
-import AddItem from '@/components/item/AddItem.vue'
+import EditList from '@/components/update/EditList.vue'
+import AddItem from '@/components/update/AddItem.vue'
 import i18n from '@/i18n.js'
 
 const props = defineProps({
