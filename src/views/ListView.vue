@@ -28,9 +28,9 @@ const { clear } = useList()
   <b-container size="m">
     <details>
       <summary>{{ $t('clear') }}</summary>
-      <b-button design="outline_danger" @click="clear">{{
-        $t('clear_all_lists')
-      }}</b-button>
+      <b-button design="outline_danger" @click="clear">
+        {{ $t('clear_all_lists') }}
+      </b-button>
     </details>
   </b-container>
 </template>
