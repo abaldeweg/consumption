@@ -1,8 +1,11 @@
 <script setup>
 import { useLocale, useColorScheme } from '@baldeweg/ui'
+import { useToast } from '@baldeweg/ui'
 
 useLocale()
 useColorScheme()
+
+const { current } = useToast()
 </script>
 
 <template>
@@ -26,6 +29,10 @@ useColorScheme()
     </b-masthead>
 
     <RouterView />
+
+    <b-toast v-if="current" :type="current.type" :visible="true">
+      {{ current.body }}
+    </b-toast>
   </BApp>
 </template>
 

@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { useToast } from '@baldeweg/ui'
+import { useI18n } from 'vue-i18n'
 import { useInventory } from '@/composables/useInventory.js'
 import { useList } from '@/composables/useList.js'
 
@@ -7,9 +9,13 @@ const props = defineProps({
   itemId: String,
 })
 
+const { t } = useI18n()
+
 const { addItem } = useList()
 
 const { products, units } = useInventory()
+
+const { add: addToast } = useToast()
 
 const product = ref(null)
 const amount = ref(1)
@@ -20,6 +26,11 @@ const add = () => {
     name: products.value[product.value].value,
     unit: units.value[unit.value].value,
     counter: amount.value,
+  })
+
+  addToast({
+    type: 'success',
+    body: t('product_added'),
   })
 
   product.value = null
