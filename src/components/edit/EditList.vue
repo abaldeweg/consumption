@@ -5,24 +5,44 @@ defineProps({
   id: Number,
 })
 
-const inventory = import.meta.env.VUE_APP_INVENTORY.split(',')
-
-const { addItem, getItem } = useList()
+const { lists, increaseCounter, decreaseCounter } = useList()
 </script>
 
 <template>
-  <b-list divider v-for="(item, index) in inventory" :key="index">
+  <b-list
+    divider
+    disabled
+    v-for="(item, index) in lists[id].resources"
+    :key="index"
+  >
     <template #title>
-      <span @click="addItem(id, item)">{{ item }}</span>
+      {{ item.name }}
     </template>
 
     <template #options>
-      <span @click="addItem(id, item)"><b-icon type="plus" :size="35" /></span>
+      <b-button
+        design="text"
+        @click="decreaseCounter(id, index)"
+        class="action"
+      >
+        <b-icon type="minus" :size="35" />
+      </b-button>
+      <b-button
+        design="text"
+        @click="increaseCounter(id, index)"
+        class="action"
+      >
+        <b-icon type="plus" :size="35" />
+      </b-button>
     </template>
 
-    <template #meta>
-      {{ getItem(id, item) ? getItem(id, item).counter : '0' }} X
-      {{ $t('on_list') }}
-    </template>
+    <template #meta>{{ item.counter }} {{ item.unit }}</template>
   </b-list>
 </template>
+
+<style scoped>
+.action {
+  margin-left: 10px;
+  user-select: none;
+}
+</style>

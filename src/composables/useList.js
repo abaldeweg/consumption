@@ -18,6 +18,25 @@ export function useList() {
     return lists.value[id].resources[index]
   }
 
+  const removeItem = (list, item) => {
+    lists.value[list].resources.splice(item, 1)
+    save()
+  }
+
+  const increaseCounter = (list, item) => {
+    lists.value[list].resources[item].counter++
+    save()
+  }
+
+  const decreaseCounter = (list, item) => {
+    lists.value[list].resources[item].counter--
+    save()
+
+    if (lists.value[list].resources[item].counter <= 0) {
+      removeItem(list, item)
+    }
+  }
+
   const getIndex = (id, item) => {
     return lists.value[id].resources.findIndex((el) => el.name === item)
   }
@@ -27,5 +46,5 @@ export function useList() {
     save()
   }
 
-  return { lists, addItem, getItem, setNotes }
+  return { lists, addItem, getItem, increaseCounter, decreaseCounter, setNotes }
 }
