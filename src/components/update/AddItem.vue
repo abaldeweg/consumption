@@ -14,18 +14,22 @@ const { products, units } = useInventory()
 const product = ref(null)
 const amount = ref(1)
 const unit = ref(0)
+
+const add = () => {
+  addItem(props.itemId, {
+    name: products.value[product.value].value,
+    unit: units.value[unit.value].value,
+    counter: amount.value,
+  })
+
+  product.value = null
+  amount.value = 1
+  unit.value = 0
+}
 </script>
 
 <template>
-  <b-form
-    @submit.prevent="
-      addItem(props.itemId, {
-        name: products[product].value,
-        unit: units[unit].value,
-        counter: amount,
-      })
-    "
-  >
+  <b-form @submit.prevent="add">
     <b-form-group>
       <b-form-item>
         <b-form-label for="product">{{ $t('product') }}</b-form-label>
