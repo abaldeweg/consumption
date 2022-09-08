@@ -3,6 +3,7 @@ import { computed, ref, toRefs, watch } from 'vue'
 import { useTitle } from '@baldeweg/ui'
 import { useList } from '@/composables/useList.js'
 import EditList from '@/components/edit/EditList.vue'
+import AddItem from '@/components/item/AddItem.vue'
 import i18n from '@/i18n.js'
 
 const props = defineProps({
@@ -56,6 +57,12 @@ const shareByMail = () => {
   </b-container>
 
   <b-container size="m">
+    <h2>{{ $t('add') }}</h2>
+    <AddItem :id="id" />
+  </b-container>
+
+  <b-container size="m">
+    <h2>{{ $t('currently_on_list') }}</h2>
     <edit-list :id="id" />
 
     <b-form-group>

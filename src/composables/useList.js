@@ -8,13 +8,7 @@ export function useList() {
   }
 
   const addItem = (id, item) => {
-    let index = getIndex(id, item)
-    if (index === -1) {
-      lists.value[id].resources.push({ name: item, counter: 1 })
-    }
-    if (index >= 0) {
-      lists.value[id].resources[index].counter++
-    }
+    lists.value[id].resources.push(item)
     save()
   }
 
