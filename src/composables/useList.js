@@ -1,15 +1,9 @@
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
-const lists = ref(null)
+const lists = ref(JSON.parse(localStorage.getItem('consumption_list')) || {})
 
 export function useList() {
   // Lists
-  const load = () => {
-    lists.value = JSON.parse(localStorage.getItem('consumption_list')) || []
-  }
-
-  onMounted(load)
-
   const save = () => {
     localStorage.setItem('consumption_list', JSON.stringify(lists.value))
   }
