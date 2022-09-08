@@ -12,7 +12,7 @@ const formatTitle = (title) => {
 
 <template>
   <b-list
-    :route="{ name: 'edit', params: { id: index } }"
+    :route="{ name: 'list.update', params: { id: index } }"
     divider
     v-for="(item, index) in lists"
     :key="index"
@@ -24,7 +24,9 @@ const formatTitle = (title) => {
         <template #selector><b-icon type="meatballs" /></template>
         <b-dropdown-item
           icon="pencil"
-          @click.prevent="$router.push({ name: 'edit', params: { id: index } })"
+          @click.prevent="
+            $router.push({ name: 'list.update', params: { id: index } })
+          "
           >{{ $t('edit') }}
         </b-dropdown-item>
         <b-dropdown-item icon="bin" @click.prevent="remove(index)"

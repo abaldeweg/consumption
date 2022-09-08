@@ -10,7 +10,7 @@ const props = defineProps({
   id: String,
 })
 
-useTitle({ title: 'Edit List' })
+useTitle({ title: 'Update List' })
 
 const { id } = toRefs(props)
 const { lists, setNotes } = useList()
