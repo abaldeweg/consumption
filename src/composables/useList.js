@@ -19,7 +19,7 @@ export function useList() {
   }
 
   const remove = (id) => {
-    lists.value.splice(id, 1)
+    delete lists.value[id]
     save()
   }
 
