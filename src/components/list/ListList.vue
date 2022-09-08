@@ -1,7 +1,7 @@
 <script setup>
-import { useLists } from '@/composables/useLists.js'
+import { useList } from '@/composables/useList.js'
 
-const { lists, remove } = useLists()
+const { lists, remove } = useList()
 
 const formatTitle = (title) => {
   let date = new Date(title * 1000)

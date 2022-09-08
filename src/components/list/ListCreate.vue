@@ -1,7 +1,7 @@
 <script setup>
-import { useLists } from '@/composables/useLists.js'
+import { useList } from '@/composables/useList.js'
 
-const { create } = useLists()
+const { create } = useList()
 </script>
 
 <template>

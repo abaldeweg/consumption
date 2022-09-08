@@ -1,21 +1,42 @@
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
-const lists = ref(JSON.parse(localStorage.getItem('consumption_list')) || [])
+const lists = ref(null)
 
 export function useList() {
+  // Lists
+  const load = () => {
+    lists.value = JSON.parse(localStorage.getItem('consumption_list')) || []
+  }
+
+  onMounted(load)
+
   const save = () => {
     localStorage.setItem('consumption_list', JSON.stringify(lists.value))
   }
 
-  const addItem = (id, item) => {
-    lists.value[id].resources.push(item)
+  const create = () => {
+    lists.value.unshift({
+      date: Math.round(Date.now() / 1000),
+      resources: [],
+      notes: null,
+    })
     save()
   }
 
-  const getItem = (id, item) => {
-    let index = getIndex(id, item)
+  const remove = (id) => {
+    lists.value.splice(id, 1)
+    save()
+  }
 
-    return lists.value[id].resources[index]
+  const clear = () => {
+    lists.value = []
+    localStorage.removeItem('consumption_list')
+  }
+
+  // Items
+  const addItem = (id, item) => {
+    lists.value[id].resources.push(item)
+    save()
   }
 
   const removeItem = (list, item) => {
@@ -37,14 +58,19 @@ export function useList() {
     }
   }
 
-  const getIndex = (id, item) => {
-    return lists.value[id].resources.findIndex((el) => el.name === item)
-  }
-
   const setNotes = (id, notes) => {
     lists.value[id].notes = notes
     save()
   }
 
-  return { lists, addItem, getItem, increaseCounter, decreaseCounter, setNotes }
+  return {
+    lists,
+    create,
+    remove,
+    clear,
+    addItem,
+    increaseCounter,
+    decreaseCounter,
+    setNotes,
+  }
 }
