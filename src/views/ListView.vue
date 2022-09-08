@@ -18,11 +18,11 @@ const { clear } = useList()
   </b-container>
 
   <b-container size="m">
-    <create-list />
+    <CreateList />
   </b-container>
 
   <b-container size="m">
-    <list-list />
+    <ListList />
   </b-container>
 
   <b-container size="m">
