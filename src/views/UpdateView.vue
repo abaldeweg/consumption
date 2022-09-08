@@ -3,6 +3,7 @@ import { computed, toRefs, watch } from 'vue'
 import { useTitle } from '@baldeweg/ui'
 import { useI18n } from 'vue-i18n'
 import { useList } from '@/composables/useList.js'
+import { useSharing } from '@/composables/useSharing.js'
 import UpdateList from '@/components/update/UpdateList.vue'
 import AddItem from '@/components/update/AddItem.vue'
 
@@ -28,28 +29,7 @@ const title = computed(() => {
   return date.toLocaleString()
 })
 
-const shareByMail = () => {
-  let content =
-    'mailto:' +
-    import.meta.env.VUE_APP_SHARE_MAIL +
-    '?subject=' +
-    t('list') +
-    ': ' +
-    title.value +
-    '&body=' +
-    t('date') +
-    ': ' +
-    title.value +
-    '%0d%0a'
-
-  lists.value[props.id].resources.forEach((element) => {
-    content += element.counter + ' x ' + element.name + '%0d%0a'
-  })
-
-  content += t('notes') + ': ' + notes.value
-
-  window.open(content)
-}
+const { shareByMail } = useSharing()
 </script>
 
 <template>
@@ -77,7 +57,7 @@ const shareByMail = () => {
   </b-container>
 
   <b-container size="m">
-    <b-button design="primary_wide" @click="shareByMail">
+    <b-button design="primary_wide" @click="shareByMail(id)">
       {{ $t('share_by_mail') }}
     </b-button>
   </b-container>
