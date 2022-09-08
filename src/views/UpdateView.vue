@@ -65,7 +65,7 @@ const shareByMail = () => {
 
   <b-container size="m">
     <h2>{{ $t('current_list') }}</h2>
-    <edit-list :id="id" />
+    <EditList :id="id" />
 
     <b-form-group>
       <b-form-item>
@@ -78,8 +78,8 @@ const shareByMail = () => {
   </b-container>
 
   <b-container size="m">
-    <b-button design="primary_wide" @click="shareByMail">{{
-      $t('share_by_mail')
-    }}</b-button>
+    <b-button design="primary_wide" @click="shareByMail">
+      {{ $t('share_by_mail') }}
+    </b-button>
   </b-container>
 </template>
