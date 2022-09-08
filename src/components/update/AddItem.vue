@@ -4,7 +4,7 @@ import { useInventory } from '@/composables/useInventory.js'
 import { useList } from '@/composables/useList.js'
 
 const props = defineProps({
-  id: String,
+  itemId: String,
 })
 
 const { addItem } = useList()
@@ -19,7 +19,7 @@ const unit = ref(0)
 <template>
   <b-form
     @submit.prevent="
-      addItem(props.id, {
+      addItem(props.itemId, {
         name: products[product].value,
         unit: units[unit].value,
         counter: amount,

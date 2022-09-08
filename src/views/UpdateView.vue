@@ -8,7 +8,7 @@ import UpdateList from '@/components/update/UpdateList.vue'
 import AddItem from '@/components/update/AddItem.vue'
 
 const props = defineProps({
-  id: String,
+  itemId: String,
 })
 
 const { t } = useI18n()
@@ -16,15 +16,15 @@ const { t } = useI18n()
 useTitle({ title: t('update_list') })
 
 const { lists, setNotes } = useList()
-const { notes } = toRefs(lists.value[props.id])
+const { notes } = toRefs(lists.value[props.itemId])
 
 watch(
   () => notes.value,
-  () => setNotes(props.id, notes.value)
+  () => setNotes(props.itemId, notes.value)
 )
 
 const title = computed(() => {
-  let date = new Date(lists.value[props.id].date * 1000)
+  let date = new Date(lists.value[props.itemId].date * 1000)
 
   return date.toLocaleString()
 })
@@ -39,12 +39,12 @@ const { shareByMail } = useSharing()
 
   <b-container size="m">
     <h2>{{ $t('add_product') }}</h2>
-    <AddItem :id="id" />
+    <AddItem :itemId="itemId" />
   </b-container>
 
   <b-container size="m">
     <h2>{{ $t('current_list') }}</h2>
-    <UpdateList :id="id" />
+    <UpdateList :itemId="itemId" />
 
     <b-form-group>
       <b-form-item>
@@ -57,7 +57,7 @@ const { shareByMail } = useSharing()
   </b-container>
 
   <b-container size="m">
-    <b-button design="primary_wide" @click="shareByMail(id)">
+    <b-button design="primary_wide" @click="shareByMail(itemId)">
       {{ $t('share_by_mail') }}
     </b-button>
   </b-container>

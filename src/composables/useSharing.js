@@ -12,25 +12,25 @@ export function useSharing() {
     return date.toLocaleString()
   }
 
-  const shareByMail = (item_id) => {
+  const shareByMail = (itemId) => {
     let content =
       'mailto:' +
       import.meta.env.VUE_APP_SHARE_MAIL +
       '?subject=' +
       t('list') +
       ': ' +
-      title(lists.value[item_id].date) +
+      title(lists.value[itemId].date) +
       '&body=' +
       t('date') +
       ': ' +
-      title(lists.value[item_id].date) +
+      title(lists.value[itemId].date) +
       '%0d%0a'
 
-    lists.value[item_id].resources.forEach((element) => {
+    lists.value[itemId].resources.forEach((element) => {
       content += element.counter + ' x ' + element.name + '%0d%0a'
     })
 
-    content += t('notes') + ': ' + lists.value[item_id].notes
+    content += t('notes') + ': ' + lists.value[itemId].notes
 
     window.open(content)
   }

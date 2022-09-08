@@ -12,7 +12,7 @@ const title = (timestamp) => {
 
 <template>
   <b-list
-    :route="{ name: 'list.update', params: { id: index } }"
+    :route="{ name: 'list.update', params: { itemId: index } }"
     divider
     v-for="(item, index) in lists"
     :key="index"
@@ -27,7 +27,7 @@ const title = (timestamp) => {
         <b-dropdown-item
           icon="pencil"
           @click.prevent="
-            $router.push({ name: 'list.update', params: { id: index } })
+            $router.push({ name: 'list.update', params: { itemId: index } })
           "
         >
           {{ $t('edit') }}

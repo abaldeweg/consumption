@@ -16,7 +16,7 @@ const router = createRouter({
       component: () => import('../views/ListView.vue'),
     },
     {
-      path: '/list/:id',
+      path: '/list/:itemId',
       name: 'list.update',
       component: () => import('../views/UpdateView.vue'),
       props: true,
