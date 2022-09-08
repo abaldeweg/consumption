@@ -2,7 +2,7 @@
 import { useTitle } from '@baldeweg/ui'
 import { useI18n } from 'vue-i18n'
 import ListList from '@/components/list/ListList.vue'
-import ListCreate from '@/components/list/ListCreate.vue'
+import CreateList from '@/components/list/CreateList.vue'
 import { useList } from '@/composables/useList.js'
 
 const { t } = useI18n()
@@ -18,7 +18,7 @@ const { clear } = useList()
   </b-container>
 
   <b-container size="m">
-    <list-create />
+    <create-list />
   </b-container>
 
   <b-container size="m">
