@@ -1,7 +1,7 @@
 <script setup>
 import { useTitle } from '@baldeweg/ui'
 import { useI18n } from 'vue-i18n'
-import ListList from '@/components/list/ListList.vue'
+import ShowLists from '@/components/list/ShowLists.vue'
 import CreateList from '@/components/list/CreateList.vue'
 import { useList } from '@/composables/useList.js'
 
@@ -22,7 +22,7 @@ const { clear } = useList()
   </b-container>
 
   <b-container size="m">
-    <ListList />
+    <ShowLists />
   </b-container>
 
   <b-container size="m">

@@ -3,7 +3,7 @@ import { useList } from '@/composables/useList.js'
 
 const { lists, remove } = useList()
 
-const formatTitle = (title) => {
+const title = (title) => {
   let date = new Date(title * 1000)
 
   return date.toLocaleString()
@@ -17,7 +17,7 @@ const formatTitle = (title) => {
     v-for="(item, index) in lists"
     :key="index"
   >
-    <template #title>{{ formatTitle(item.date) }}</template>
+    <template #title>{{ title(item.date) }}</template>
 
     <template #options>
       <b-dropdown>
