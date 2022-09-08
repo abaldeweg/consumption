@@ -36,8 +36,8 @@ COMPOSE_PROJECT_NAME=consumption
 CONTAINER_PORT=9000
 
 VUE_APP_BASE_URL=/
-VUE_APP_PRODUCTS=milk (package),coffee,cola
-VUE_APP_UNITS=milk (package),coffee,cola
+VUE_APP_PRODUCTS=milk,coffee,cola
+VUE_APP_UNITS=carton,piece,can,ml,l,g,kg
 VUE_APP_SHARE_MAIL=
 ```
 
@@ -45,7 +45,7 @@ VUE_APP_SHARE_MAIL=
 
 - VUE_APP_BASE_URL - The Base URL, in case the app is installed in a subdirectory.
 - VUE_APP_PRODUCTS - Your products as comma separated values e.g. `milk,coffee,cola`
-- VUE_APP_UNITS - Your units as comma separated values e.g. `carton,piece,ml,l,g,kg`
+- VUE_APP_UNITS - Your units as comma separated values e.g. `carton,piece,can,ml,l,g,kg`
 - VUE_APP_SHARE_MAIL - Default address for share by mail
 - AUTH - The value will be written to `/usr/local/apache2/.htpasswd`
 
