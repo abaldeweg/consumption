@@ -1,10 +1,13 @@
 <script setup>
 import { useTitle } from '@baldeweg/ui'
+import { useI18n } from 'vue-i18n'
 import ListList from '@/components/list/ListList.vue'
 import ListCreate from '@/components/list/ListCreate.vue'
 import { useList } from '@/composables/useList.js'
 
-useTitle({ title: 'Lists' })
+const { t } = useI18n()
+
+useTitle({ title: t('my_lists') })
 
 const { clear } = useList()
 </script>
@@ -12,7 +15,7 @@ const { clear } = useList()
 <template>
   <section>
     <b-container size="m">
-      <h1>{{ $t('lists') }}</h1>
+      <h1>{{ $t('my_lists') }}</h1>
     </b-container>
 
     <b-container size="m">
