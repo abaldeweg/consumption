@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { useToast } from '@baldeweg/ui'
 import { useI18n } from 'vue-i18n'
+import { v4 as uuidv4 } from 'uuid'
 
 const KEY_NAME = 'consumption_lists'
 const lists = ref(JSON.parse(localStorage.getItem(KEY_NAME)) || {})
@@ -16,7 +17,7 @@ export function useList() {
   }
 
   const create = () => {
-    lists.value['l-' + Math.round(Date.now() / 1000)] = {
+    lists.value[uuidv4()] = {
       date: Math.round(Date.now() / 1000),
       resources: [],
       notes: null,
