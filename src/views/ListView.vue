@@ -13,26 +13,24 @@ const { clear } = useList()
 </script>
 
 <template>
-  <section>
-    <b-container size="m">
-      <h1>{{ $t('my_lists') }}</h1>
-    </b-container>
+  <b-container size="m">
+    <h1>{{ $t('my_lists') }}</h1>
+  </b-container>
 
-    <b-container size="m">
-      <list-create />
-    </b-container>
+  <b-container size="m">
+    <list-create />
+  </b-container>
 
-    <b-container size="m">
-      <list-list />
-    </b-container>
+  <b-container size="m">
+    <list-list />
+  </b-container>
 
-    <b-container size="m">
-      <details>
-        <summary>{{ $t('clear') }}</summary>
-        <b-button design="outline_danger" @click="clear">{{
-          $t('clear_all_lists')
-        }}</b-button>
-      </details>
-    </b-container>
-  </section>
+  <b-container size="m">
+    <details>
+      <summary>{{ $t('clear') }}</summary>
+      <b-button design="outline_danger" @click="clear">{{
+        $t('clear_all_lists')
+      }}</b-button>
+    </details>
+  </b-container>
 </template>
