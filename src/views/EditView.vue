@@ -7,7 +7,7 @@ import AddItem from '@/components/item/AddItem.vue'
 import i18n from '@/i18n.js'
 
 const props = defineProps({
-  id: Number,
+  id: String,
 })
 
 useTitle({ title: 'Edit List' })

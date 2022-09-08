@@ -2,7 +2,7 @@
 import { useList } from '@/composables/useList.js'
 
 defineProps({
-  id: Number,
+  id: String,
 })
 
 const { lists, increaseCounter, decreaseCounter } = useList()

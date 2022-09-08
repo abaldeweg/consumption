@@ -19,9 +19,7 @@ const router = createRouter({
       path: '/list/edit/:id',
       name: 'edit',
       component: () => import('../views/EditView.vue'),
-      props: (route) => ({
-        id: parseInt(route.params.id),
-      }),
+      props: true,
     },
     {
       path: '/:pathMatch(.*)',

@@ -4,7 +4,7 @@ import { useInventory } from '@/composables/useInventory.js'
 import { useList } from '@/composables/useList.js'
 
 const props = defineProps({
-  id: Number,
+  id: String,
 })
 
 const { addItem } = useList()

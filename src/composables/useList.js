@@ -15,11 +15,11 @@ export function useList() {
   }
 
   const create = () => {
-    lists.value.unshift({
+    lists.value['l-' + Math.round(Date.now() / 1000)] = {
       date: Math.round(Date.now() / 1000),
       resources: [],
       notes: null,
-    })
+    }
     save()
   }
 
