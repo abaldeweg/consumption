@@ -1,16 +1,18 @@
 <script setup>
 import { computed, ref, toRefs, watch } from 'vue'
 import { useTitle } from '@baldeweg/ui'
+import { useI18n } from 'vue-i18n'
 import { useList } from '@/composables/useList.js'
 import EditList from '@/components/update/EditList.vue'
 import AddItem from '@/components/update/AddItem.vue'
-import i18n from '@/i18n.js'
 
 const props = defineProps({
   id: String,
 })
 
-useTitle({ title: 'Update List' })
+const { t } = useI18n()
+
+useTitle({ title: t('update_list') })
 
 const { id } = toRefs(props)
 const { lists, setNotes } = useList()
@@ -32,11 +34,11 @@ const shareByMail = () => {
     'mailto:' +
     import.meta.env.VUE_APP_SHARE_MAIL +
     '?subject=' +
-    i18n.t('list') +
+    t('list') +
     ': ' +
     title.value +
     '&body=' +
-    i18n.t('date') +
+    t('date') +
     ': ' +
     title.value +
     '%0d%0a'
@@ -45,7 +47,7 @@ const shareByMail = () => {
     content += element.counter + ' x ' + element.name + '%0d%0a'
   })
 
-  content += i18n.t('notes') + ': ' + notes.value
+  content += t('notes') + ': ' + notes.value
 
   window.open(content)
 }
