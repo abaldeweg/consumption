@@ -29,7 +29,7 @@ const title = computed(() => {
   return date.toLocaleString()
 })
 
-const { shareByMail } = useSharing()
+const { shareByMail } = useSharing(lists.value[props.itemId])
 </script>
 
 <template>
@@ -57,7 +57,7 @@ const { shareByMail } = useSharing()
   </b-container>
 
   <b-container size="m">
-    <b-button design="primary_wide" @click="shareByMail(itemId)">
+    <b-button design="primary_wide" @click="shareByMail">
       {{ $t('share_by_mail') }}
     </b-button>
   </b-container>
