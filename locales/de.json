@@ -12,5 +12,6 @@
   "product": "Produkt",
   "amount": "Menge",
   "unit": "Einheit",
-  "add": "Hinzufügen"
+  "add": "Hinzufügen",
+  "current_list": "Aktuelle Liste"
 }

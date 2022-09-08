@@ -12,5 +12,6 @@
   "product": "Product",
   "amount": "Amount",
   "unit": "Unit",
-  "add": "Add"
+  "add": "Add",
+  "current_list": "Current List"
 }

@@ -62,7 +62,7 @@ const shareByMail = () => {
   </b-container>
 
   <b-container size="m">
-    <h2>{{ $t('currently_on_list') }}</h2>
+    <h2>{{ $t('current_list') }}</h2>
     <edit-list :id="id" />
 
     <b-form-group>
