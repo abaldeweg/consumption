@@ -1,11 +1,12 @@
 import { ref } from 'vue'
 
-const lists = ref(JSON.parse(localStorage.getItem('consumption_list')) || {})
+const KEY_NAME = 'consumption_lists'
+const lists = ref(JSON.parse(localStorage.getItem(KEY_NAME)) || {})
 
 export function useList() {
   // Lists
   const save = () => {
-    localStorage.setItem('consumption_list', JSON.stringify(lists.value))
+    localStorage.setItem(KEY_NAME, JSON.stringify(lists.value))
   }
 
   const create = () => {
@@ -23,8 +24,8 @@ export function useList() {
   }
 
   const clear = () => {
-    lists.value = []
-    localStorage.removeItem('consumption_list')
+    lists.value = {}
+    localStorage.removeItem(KEY_NAME)
   }
 
   // Items
