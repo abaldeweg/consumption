@@ -64,7 +64,7 @@ const add = () => {
         <b-form-label for="units">{{ $t('unit') }}</b-form-label>
       </b-form-item>
       <b-form-item>
-        <b-form-select id="units" :items="units" v-model="unit" />
+        <b-form-select id="unit" :items="units" v-model="unit" />
       </b-form-item>
     </b-form-group>
 
