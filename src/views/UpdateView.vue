@@ -51,7 +51,7 @@ const { shareByMail } = useSharing(lists.value[props.itemId])
         <b-form-label for="notes">{{ $t('notes') }}</b-form-label>
       </b-form-item>
       <b-form-item>
-        <b-form-textarea v-model="notes" />
+        <b-form-textarea id="note" v-model="notes" />
       </b-form-item>
     </b-form-group>
   </b-container>

@@ -16,7 +16,7 @@ describe('Update', () => {
     cy.get('#product').select(0)
     cy.get('#amount').type('{backspace}2')
     cy.get('#unit').select(2)
-    cy.get('textarea').type('note')
+    cy.get('#note').type('note')
 
     cy.get('.item > .btn').click()
 
