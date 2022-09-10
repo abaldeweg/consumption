@@ -17,11 +17,13 @@ export function useList() {
   }
 
   const create = () => {
-    lists.value[uuidv4()] = {
+    const list = {}
+    list[uuidv4()] = {
       date: Math.round(Date.now() / 1000),
       resources: [],
       notes: null,
     }
+    lists.value = Object.assign(list, lists.value)
     save()
   }
 
