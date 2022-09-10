@@ -2,6 +2,8 @@
 
 List of consumed materials.
 
+![Screenshot showing overview with lists](screenshot.jpg)
+
 ## Install with Docker
 
 Run the container with Docker or something similar.
