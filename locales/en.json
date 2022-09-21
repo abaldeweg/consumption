@@ -18,5 +18,7 @@
   "update_list": "Update List",
   "add_product": "Add Product",
   "product_added": "Product added",
-  "item_removed": "Item removed, because set to zero."
+  "item_removed": "Item removed, because set to zero.",
+  "product_freeform": "Product (Freeform)",
+  "misc": "Miscellaneous"
 }

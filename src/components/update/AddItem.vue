@@ -18,12 +18,16 @@ const { products, units } = useInventory()
 const { add: addToast } = useToast()
 
 const product = ref(null)
+const productFreeform = ref(null)
 const amount = ref(1)
 const unit = ref(0)
 
 const add = () => {
   addItem(props.itemId, {
-    name: products.value[product.value].value,
+    name:
+      product.value === 'misc'
+        ? productFreeform.value
+        : products.value[product.value].value,
     unit: units.value[unit.value].value,
     counter: amount.value,
   })
@@ -47,6 +51,17 @@ const add = () => {
       </b-form-item>
       <b-form-item>
         <b-form-select id="product" :items="products" v-model="product" />
+      </b-form-item>
+    </b-form-group>
+
+    <b-form-group v-if="product === 'misc'">
+      <b-form-item>
+        <b-form-label for="productFreeform">
+          {{ $t('product_freeform') }}
+        </b-form-label>
+      </b-form-item>
+      <b-form-item>
+        <b-form-input id="productFreeform" v-model="productFreeform" />
       </b-form-item>
     </b-form-group>
 

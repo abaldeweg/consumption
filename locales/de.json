@@ -18,5 +18,7 @@
   "update_list": "Liste aktualisieren",
   "add_product": "Produkt hinzufügen",
   "product_added": "Produkt hinzugefügt",
-  "item_removed": "Eintrag entfernt, da auf Null gesetzt."
+  "item_removed": "Eintrag entfernt, da auf Null gesetzt.",
+  "product_freeform": "Produkt (Freitextfeld)",
+  "misc": "Sonstiges"
 }
