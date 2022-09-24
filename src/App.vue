@@ -11,7 +11,7 @@ const { current } = useToast()
 <template>
   <BApp>
     <b-masthead>
-      <b-masthead-item type="center">
+      <b-masthead-item position="center">
         <router-link :to="{ name: 'list' }">
           <svg
             xmlns="http://www.w3.org/2000/svg"

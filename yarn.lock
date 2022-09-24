@@ -917,10 +917,10 @@
   resolved "https://registry.yarnpkg.com/@baldeweg/eslint-config/-/eslint-config-0.3.3.tgz#0507b2e6755180ecc9412b34f0da15601414e489"
   integrity sha512-IAV2mizW2bWDBI4BK2R0mR/7TaFiNybwwHGBZtTy8jKsih/3eZYqhrau5oYe9CPdTE3MXSTYRCOnfzCwn33wqA==
 
-"@baldeweg/ui@0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@baldeweg/ui/-/ui-0.4.2.tgz#ab911b0d1ce2f38ae81c8406a5fb003fa6bdd695"
-  integrity sha512-FuWn2lkSnIHTKE9Dnf11W1+Hq2RKRR6tYkvSaWItJj0DFc+u9CyaVIULWraxf4dEikv3EuOgWMv0MulLemSfcA==
+"@baldeweg/ui@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@baldeweg/ui/-/ui-0.5.0.tgz#10aed97d691bf759407541663631dac623878c58"
+  integrity sha512-aXoCSYlZXYHEBjqUbkoQXirdjon5ZWlgmw5awdzZ2NRwlN9GYfXxtsrx//NojhT7Mk67Ls6u2OR3QCEVT6KsnA==
   dependencies:
     axios "^0.27.2"
     firebase "^9.9.0"
