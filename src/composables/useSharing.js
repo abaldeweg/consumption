@@ -24,7 +24,8 @@ export function useSharing(item) {
       '%0d%0a'
 
     item.resources.forEach((element) => {
-      content += element.counter + ' x ' + element.name + '%0d%0a'
+      content +=
+        element.counter + ' ' + element.unit + ' ' + element.name + '%0d%0a'
     })
 
     content += t('notes') + ': ' + item.notes
