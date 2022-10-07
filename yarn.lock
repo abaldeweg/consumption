@@ -917,12 +917,12 @@
   resolved "https://registry.yarnpkg.com/@baldeweg/eslint-config/-/eslint-config-0.6.0.tgz#83eb8df33030e6b31873bec761cee1ea26868042"
   integrity sha512-L++oh+TLTCkxDQ0VaIUTpwdCvrwq9NtGiMWnkwmw2saLq+yMmv5UBbL0uHI2kh9fl2V2iLCyck3PGK4gpRleXw==
 
-"@baldeweg/ui@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@baldeweg/ui/-/ui-0.6.0.tgz#eec4b3c7390c76b585767d4335d943373f815ca8"
-  integrity sha512-P0pDkHFqjSku2jvVXJGY+e5IbZhsROvGWf+nZeVWJta8UlvPGFg/hpslxRtEwcsA8LUMxbQsNCT/s+LFynylYQ==
+"@baldeweg/ui@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@baldeweg/ui/-/ui-0.6.1.tgz#551b311312c462a16a5b7ffd54f75e0a9b4a77d8"
+  integrity sha512-+n7w7kfAva57EtB2eUpEVmzWwPUhwVghro/K/nWcbJ41ccBFg0vS2OgmwazM/DLe65CLybeZ4HN6CqNqEnQBoQ==
   dependencies:
-    axios "^0.27.2"
+    axios "^1.0.0"
     firebase "^9.9.0"
     vue "^3.2.33"
 
@@ -2067,7 +2067,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@1.1.2:
+axios@1.1.2, axios@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.1.2.tgz#8b6f6c540abf44ab98d9904e8daf55351ca4a331"
   integrity sha512-bznQyETwElsXl2RK7HLLwb5GPpOLlycxHCtrpDR/4RqqBzjARaOTo3jz4IgtntWUYee7Ne4S8UHd92VCuzPaWA==
@@ -2089,14 +2089,6 @@ axios@^0.25:
   integrity sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==
   dependencies:
     follow-redirects "^1.14.7"
-
-axios@^0.27.2:
-  version "0.27.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
-  integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
-  dependencies:
-    follow-redirects "^1.14.9"
-    form-data "^4.0.0"
 
 babel-plugin-dynamic-import-node@^2.3.3:
   version "2.3.3"
@@ -3254,7 +3246,7 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-follow-redirects@^1.14.0, follow-redirects@^1.14.7, follow-redirects@^1.14.9:
+follow-redirects@^1.14.0, follow-redirects@^1.14.7:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.1.tgz#0ca6a452306c9b276e4d3127483e29575e207ad5"
   integrity sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==
