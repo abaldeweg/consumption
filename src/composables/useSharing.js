@@ -28,7 +28,7 @@ export function useSharing(item) {
         element.counter + ' ' + element.unit + ' ' + element.name + '%0d%0a'
     })
 
-    content += t('notes') + ': ' + item.notes
+    content += t('notes') + ': ' + (item.notes ?? '')
 
     window.open(content)
   }
