@@ -966,10 +966,10 @@
     node-html-parser "5.3.3"
     pathe "0.2.0"
 
-"@cypress/vue@4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@cypress/vue/-/vue-4.2.2.tgz#907d0e7bf490b2dc1340c626e440e979873a03c7"
-  integrity sha512-M5u8w3OwEwvhYo43tBwduYn3hra5m5yIIAak8mFt+mt58yCmkW57q6mkNkZNZNtVei2eMHIcCfAWLoZmpqg4fg==
+"@cypress/vue@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@cypress/vue/-/vue-5.0.1.tgz#38a8d39e6f0604d4092f81df41609b4a3a0ee41b"
+  integrity sha512-Sy7eh7LUJX8CCMkMp8clGQaro513WXLYeApUKaWVrPGuEgdIYPSbquHDxl77Ei3VGg9PLqwIMU291kfdwOCuLg==
 
 "@cypress/xvfb@^1.2.4":
   version "1.2.4"
