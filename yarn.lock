@@ -3298,7 +3298,7 @@ firebase@^9.9.0:
     "@firebase/storage-compat" "0.1.17"
     "@firebase/util" "1.6.3"
 
-flat-cache@^3.0.4:
+flat-cache@^3.0, flat-cache@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-3.0.4.tgz#61b0338302b2fe9f957dcc32fc2a87f1c3048b11"
   integrity sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==
@@ -5326,13 +5326,14 @@ vite-plugin-pwa@0.14.1:
     workbox-build "^6.5.4"
     workbox-window "^6.5.4"
 
-vite-plugin-webfont-dl@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-webfont-dl/-/vite-plugin-webfont-dl-3.5.0.tgz#f8fe8e938aaf5d4893eddcb5f2b420097f97cf47"
-  integrity sha512-TBwUm9WV27ikWpvYKeBB0DjB5HLOdamZwNd2tU+CJno8tEQGdLD5laCJ/332JsJf2PT11OcmW3dbCYscZvnsog==
+vite-plugin-webfont-dl@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-webfont-dl/-/vite-plugin-webfont-dl-3.6.0.tgz#b77f52ab912ddce58f3ffe37a60ab6e4888ae885"
+  integrity sha512-3qfRrouQnBqwYZaBqjNeAkaywlZyo+VSM6jnoJk4PiOyo1/n4V4sbwby2QCTdjQwtIIsPTfggXvN6S/wuIcJdg==
   dependencies:
     axios "^1.2"
     clean-css "^5.3"
+    flat-cache "^3.0"
     picocolors "^1.0"
 
 vite@3.2.5:
