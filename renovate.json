@@ -5,9 +5,13 @@
   ],
   "packageRules": [
     {
-      "updateTypes": ["patch"],
+      "updateTypes": [
+        "patch"
+      ],
       "automerge": true,
-      "requiredStatusChecks": ["ci/tests"],
+      "requiredStatusChecks": [
+        "ci/tests"
+      ]
     }
   ]
 }
